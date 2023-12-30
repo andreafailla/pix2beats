@@ -1,7 +1,8 @@
 # pix2beats
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pix2beats.streamlit.app/)
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
-![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
+[![License GNU](https://img.shields.io/badge/License-GNU%203--Clause-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 
  A web app to create music from images.
 
