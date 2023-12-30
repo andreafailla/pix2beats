@@ -227,24 +227,27 @@ def trackmaker(
                   data=track_combined.T.astype(np.float32))
 
     # Read the track
-    with AudioFile('track.wav', 'r') as f:
-        audio = f.read(f.frames)
+    try:
+        with AudioFile('track.wav', 'r') as f:
+            audio = f.read(f.frames)
 
-    # Apply the pedalboard effects
-    effected = apply_pb_effects(
-        gain_db, drive_db, cutoff_hz, resonance_lad,
-        drive_lad, delay_seconds, damping, room_size,
-        wet_level, dry_level, width, rate_hz_chorus,
-        audio, SAMPLE_RATE
-    )
+        # Apply the pedalboard effects
+        effected = apply_pb_effects(
+            gain_db, drive_db, cutoff_hz, resonance_lad,
+            drive_lad, delay_seconds, damping, room_size,
+            wet_level, dry_level, width, rate_hz_chorus,
+            audio, SAMPLE_RATE
+        )
 
-    # Write the audio back as a wav file:
-    with AudioFile('track.wav', 'w', SAMPLE_RATE, effected.shape[0]) as f:
-        f.write(effected)
+        # Write the audio back as a wav file:
+        with AudioFile('track.wav', 'w', SAMPLE_RATE, effected.shape[0]) as f:
+            f.write(effected)
 
-    # Read the processed track
-    with open('track.wav', 'rb') as f:
-        audio_bytes = f.read()
+        # Read the processed track
+        with open('track.wav', 'rb') as f:
+            audio_bytes = f.read()
 
 
-    return audio_bytes
+        return audio_bytes
+    except ValueError:
+        return None
