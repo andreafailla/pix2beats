@@ -2,7 +2,7 @@ SAMPLE_IMAGES = ['mona_lisa.png',
                  'pixel_art_landscape.png',
                  'sunflower.png']
 
-SAMPLE_RATE = 22050 # standard audio sample rate
+SAMPLE_RATE = 22050  # standard audio sample rate
 
 FADE_DURATION = 0.015  # duration of fade in and fade out
 
