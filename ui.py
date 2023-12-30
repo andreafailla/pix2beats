@@ -334,7 +334,8 @@ if __name__ == '__main__':
             }
         </style>
         Developed by <a href=https://linktr.ee/andreafailla>Andrea Failla</a><br>
-        Powered by <img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" style="width:20px;height:10px;">
+        Powered by <img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" style="width:20px;height:10px;"><br>
+        Leave a :star: on <a href=https://github.com/andreafailla/pix2beats>GitHub</a>!
         """,
                         unsafe_allow_html=True)
 
