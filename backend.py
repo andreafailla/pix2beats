@@ -246,8 +246,5 @@ def trackmaker(
     with open('track.wav', 'rb') as f:
         audio_bytes = f.read()
 
-    # Delete the track
-    if os.path.exists('track.wav'):
-        os.remove('track.wav')
 
     return audio_bytes
