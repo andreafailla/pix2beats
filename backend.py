@@ -161,8 +161,6 @@ def get_track_layers(img, scale, t, n_pixels, randomize_octaves, harmonize):
     octaves = np.array([0.5, 1, 2])  # Go an octave below, same note, or go an octave above
     t = np.linspace(0, t, int(t * SAMPLE_RATE), endpoint=False)
 
-    print(t) # evenly spaced time vector
-
     # To avoid clicking sounds, apply fade in and fade out
     fade_samples = int(FADE_DURATION * SAMPLE_RATE)
 

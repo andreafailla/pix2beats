@@ -303,7 +303,8 @@ if __name__ == '__main__':
             # buttons
             b0, b1, _ = st.columns([1, 1, 2], gap='small')
             with b0:
-                st.download_button('Download Track', data=track, file_name=f'{filename}.wav', mime='audio/wav')
+                exp_track_name = filename[len(tmpdir)+1:] if filename.startswith(tmpdir) else filename
+                st.download_button('Download Track', data=track, file_name=f'{exp_track_name}.wav', mime='audio/wav')
 
             with b1:
                 exp_preset_name = filename.split('/')[-1] if filename.startswith(tmpdir) else filename
