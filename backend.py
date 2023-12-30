@@ -3,16 +3,13 @@ Loosely based on
 https://github.com/victormurcia/Making-Music-From-Images/blob/main/music_to_images.py
 """
 
+import os
 import random
 import time
-import os
-import glob
 
 import numpy as np
-
 # image
 from PIL import Image
-
 # audio
 from pedalboard import Pedalboard, Chorus, Reverb, Gain, LadderFilter, Delay, Distortion
 from pedalboard.io import AudioFile
@@ -24,18 +21,6 @@ from constants import *
 random.seed(42)
 
 
-def clean():
-    """ Removes resized images from previous runs """
-    torem = ['*_resized.png','*.wav', '*.jpg', '*jpeg']
-    for pattern in torem:
-        for i in glob.glob(pattern):
-            os.remove(i)
-
-    for i in glob.glob('*.png'):
-        if i not in SAMPLE_IMAGES:
-            os.remove(i)
-
-
 def rolling_title(placeholder, text, delay=0.05):
     """
     Displays title with rolling effect
@@ -45,11 +30,11 @@ def rolling_title(placeholder, text, delay=0.05):
 
         for i in range(len(text)):
             time.sleep(delay)
-            placeholder.markdown(f'### {text[:i + 1]}')
+            placeholder.markdown(f'#### {text[:i + 1]}')
         time.sleep(1)
         for i in range(len(text)):
             time.sleep(delay)
-            placeholder.markdown(f'### {text[:len(text) - i]}')
+            placeholder.markdown(f'#### {text[:len(text) - i]}')
 
 
 def resize_and_convert(filename, tmpdir, n_pixels=None):
@@ -57,6 +42,7 @@ def resize_and_convert(filename, tmpdir, n_pixels=None):
     Resize the image, convert to hsv, and save as png
 
     :param filename:
+    :param tmpdir:
     :param n_pixels:
     :return:
     """
@@ -72,7 +58,6 @@ def resize_and_convert(filename, tmpdir, n_pixels=None):
         # Resize the image while maintaining the aspect ratio
         img = img.resize((new_width, int(new_width / aspect_ratio)))
     if not filename.startswith(tmpdir):
-
         img.save(f"{tmpdir}/{filename.split('.')[0]}_resized.png", "PNG")
 
     return img
@@ -88,10 +73,10 @@ def get_scale(octave, key, scale_name):
     """
 
     # Find index of desired key
-    idx = OCTAVE.index(key)
+    idx = NOTES.index(key)
 
     # Redefine scale interval so that scale intervals begin with whichKey
-    new_scale = OCTAVE[idx:12] + OCTAVE[:idx]
+    new_scale = NOTES[idx:12] + NOTES[:idx]
 
     # Choose scale
     scale = SCALES.get(scale_name)
@@ -102,7 +87,7 @@ def get_scale(octave, key, scale_name):
     # Initialize arrays
     freqs = []
     for i in range(len(scale)):
-        note = new_scale[scale[i]] + str(octave+1)
+        note = new_scale[scale[i]] + str(octave)
         freqs.append(PIANO_NOTES[note])
     return freqs
 

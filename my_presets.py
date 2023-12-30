@@ -1,6 +1,6 @@
 
 
-presets = {
+PRESETS = {
     'None':
         {'scale': 'Major', 'key': 'A', 'octave': 2, 'harmony': 'None',
          'randomize_octaves': True, 'resize_to_n_pixels': False,
@@ -24,7 +24,6 @@ presets = {
                          "drive_db": 0.0, "cutoff_hz": 0.0, "resonance_lad": 0.2, "drive_lad": 1.0,
                          "delay_seconds": 0.1, "room_size": 0.2, "damping": 0.3, "wet_level": 0.0, "dry_level": 0.1,
                          "width": 0.0, "rate_hz_chorus": 1.4},
-
     'Distorted Bass': {"scale": "Aeolian", "key": "A#", "octave": 1, "harmony": "None", "randomize_octaves": False,
                        "t_value": 0.3, "n_pixels": 64, "gain_db": 12.0, "drive_db": 4.0, "cutoff_hz": 0.0,
                        "resonance_lad": 0.2, "drive_lad": 1.0, "delay_seconds": 0.0, "room_size": 0.1,

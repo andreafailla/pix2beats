@@ -6,7 +6,7 @@ SAMPLE_RATE = 22050 # standard audio sample rate
 
 FADE_DURATION = 0.015  # duration of fade in and fade out
 
-OCTAVE = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
+NOTES = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
 
 PIANO_NOTES = {'A0': 27.5, 'A#0': 29.13523509488062,
                'B0': 30.86770632850775, 'C0': 32.70319566257483,
