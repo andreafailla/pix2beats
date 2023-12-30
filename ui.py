@@ -333,7 +333,7 @@ if __name__ == '__main__':
             text-decoration: underline;
             }
         </style>
-        Developed by <a href=https://linktr.ee/andreafailla>Andrea Failla</a>
+        Developed by <a href=https://linktr.ee/andreafailla>Andrea Failla</a><br>
         Powered by <img src="https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png" style="width:20px;height:10px;">
         """,
                         unsafe_allow_html=True)
