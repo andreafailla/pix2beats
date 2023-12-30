@@ -1,0 +1,4 @@
+[global]
+disableWidgetStateDuplicationWarning = true
+[theme]
+base="dark"
