@@ -102,7 +102,7 @@ def get_scale(octave, key, scale_name):
     # Initialize arrays
     freqs = []
     for i in range(len(scale)):
-        note = new_scale[scale[i]] + str(octave)
+        note = new_scale[scale[i]] + str(octave+1)
         freqs.append(PIANO_NOTES[note])
     return freqs
 
