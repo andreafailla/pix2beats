@@ -26,3 +26,7 @@ pip install -r requirements.txt
 streamlit run ui.py
 ```
 
+# Credits
+Some ideas and code are adapted from [this](https://victormurcia.github.io/Making-Music-From-Images-in-Python/) very nice article by V. Murcia,
+as well as from [this](https://blog.streamlit.io/30-days-of-streamlit/) interactive crash course from the Streamlit team.
+
