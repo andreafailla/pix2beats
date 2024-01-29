@@ -11,6 +11,10 @@ from my_presets import PRESETS
 
 
 def init_session_state():
+    """
+    Initialize the session state with the default parameters
+    :return:
+    """
     for k, v in PRESETS["None"].items():
         if k not in st.session_state:
             if k != "octave":
@@ -21,6 +25,11 @@ def init_session_state():
 
 
 def update_session_state(preset):
+    """
+    Update the session state with the parameters of the selected preset
+    :param preset:
+    :return:
+    """
     for k, v in preset.items():
         if k != "octave":
             st.session_state[k] = v
@@ -30,8 +39,10 @@ def update_session_state(preset):
 
 
 def write_intro():
-    """Defines general settings and introduces the app.
-    :return: placeholder for the rolling title
+    """
+    Write the intro of the app and define settings
+
+    :return:
     """
     st.set_page_config(
         page_title="Pix2Beats",
@@ -74,6 +85,10 @@ def write_intro():
 
 
 def handle_presets():
+    """
+    Function to choose and/or upload presets
+    :return:
+    """
     presetsel, presetupl, _ = st.columns([1, 1, 2])
     with presetsel:
         preset_name = st.selectbox(
@@ -362,6 +377,14 @@ def make_widgets_and_get_parameters():
 
 
 def export_buttons(filename, param_dict, track, tmpdir):
+    """
+    Create the buttons to download the track and the preset
+    :param filename:
+    :param param_dict:
+    :param track:
+    :param tmpdir:
+    :return:
+    """
     b0, b1, _ = st.columns([1, 1, 2], gap="small")
     with b0:
         exp_track_name = (
